@@ -1,4 +1,4 @@
-from interfaces import *
+from ... import *
 from types import MappingProxyType
 
 

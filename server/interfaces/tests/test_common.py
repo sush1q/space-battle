@@ -1,5 +1,4 @@
-from interfaces import *
-# TODO: пофиксить импорт
+from ... import *
 
 
 def test_point():

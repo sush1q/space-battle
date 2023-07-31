@@ -1,5 +1,5 @@
 from typing import Any
-from common import *
+from .common import *
 from abc import ABC, abstractmethod
 
 
