@@ -1,5 +1,4 @@
-from interfaces.move import *
-# TODO: пофиксить импорт
+from interfaces import *
 from types import MappingProxyType
 
 
@@ -54,5 +53,5 @@ def test_unavailable_set_position():
     move = Move(moveable_obj)
     try:
         move()
-    except:
+    except TypeError:
         assert True

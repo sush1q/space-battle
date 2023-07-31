@@ -1,4 +1,4 @@
-from interfaces.common import *
+from interfaces import *
 # TODO: пофиксить импорт
 
 
