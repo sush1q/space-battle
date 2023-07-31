@@ -1,0 +1,11 @@
+# vscode
+.vscode
+.idea
+# python venv
+.venv
+venv/
+pyvenv
+# pytest
+.pytest_cache
+__pycache__
+.hypothesis
