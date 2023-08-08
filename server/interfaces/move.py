@@ -35,7 +35,7 @@ class MoveableAdapter(IMoveable):
         return self.obj.set_property(MoveableAdapter.position_property, new_position)
 
 
-class Move:
+class Move(ICommand):
     def __init__(self, obj:IMoveable) -> None:
         self.obj = obj
         
