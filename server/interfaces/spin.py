@@ -2,7 +2,7 @@ from .common import *
 from abc import ABC, abstractmethod
 
 
-class Spin:
+class Spin(ICommand):
     def __init__(self, obj:'ISpinable') -> None:
         self.obj = obj
         

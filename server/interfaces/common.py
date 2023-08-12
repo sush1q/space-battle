@@ -33,6 +33,15 @@ class IObject(ABC):
     def set_property(self, key, value):
         pass
     
+class ICommand(ABC):
+    @abstractmethod
+    def __init__(self, obj):
+        pass
+    
+    @abstractmethod
+    def __call__(self):
+        pass
+    
 class UObject(IObject):
     def __init__(self, obj) -> None:
         self.obj = obj

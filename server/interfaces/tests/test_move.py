@@ -55,3 +55,4 @@ def test_unavailable_set_position():
         move()
     except TypeError:
         assert True
+
