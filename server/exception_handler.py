@@ -1,6 +1,6 @@
 from .interfaces import *
 from .logger import *
-from .event_loop import *
+
 
 
 class ExceptionHandler:
@@ -19,7 +19,7 @@ class ExceptionHandler:
     def handle(cls, exception, command) -> ICommand:
         exc_type = type(exception).__name__
         cmd_type = type(command).__name__
-        return cls.store[cmd_type][exc_type](cls._handled(exc_type, command))
+        return cls.store.get(cmd_type,exc_type)(cls._handled(exc_type, command))
 
 class ExceptionLogger(ICommand):
     def __init__(self, obj):
@@ -37,3 +37,17 @@ class RepeatCommand(ICommand):
 
 class DoubleRepeatCommand(RepeatCommand):
     pass
+
+class Strategy:
+    store = {}
+    
+    @classmethod
+    def get(cls, func, exception):
+        func_exceptions = cls.store.get(func)
+        if func_exceptions is None:
+            return RepeatCommand
+        strategy_command = func_exceptions.get(exception)
+        if strategy_command is None:
+            return RepeatCommand
+        else:
+            return strategy_command

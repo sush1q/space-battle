@@ -28,7 +28,6 @@ class MoveableAdapter(IMoveable):
         return self.obj.get_property(MoveableAdapter.position_property)
 
     def get_velocity(self):
-        # raise NotImplementedError
         return self.obj.get_property(MoveableAdapter.velocity_property)
 
     def set_position(self, new_position: Point):
