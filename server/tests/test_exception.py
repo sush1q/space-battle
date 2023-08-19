@@ -34,7 +34,8 @@ from server.event_loop import *
     ]
 )
 def test_exception(strategy, exceptions):
-    ExceptionHandler.store = strategy
+    Strategy.store = strategy
+    ExceptionHandler.store = Strategy
 
     obj = UObject(
         {
